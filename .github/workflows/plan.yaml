@@ -1,0 +1,22 @@
+name: Terraform Plan & Policy Check
+
+on:
+  pull_request:
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Run tfsec Security Scan
+        uses: aquasecurity/tfsec-action@v1.0.3
