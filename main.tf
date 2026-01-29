@@ -13,16 +13,10 @@ resource "aws_security_group" "demo_sg" {
   description = "Insecure SG to be deleted after demo "
 
   ingress {
+    description = "allowed from my ip"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["223.181.108.36/32"]  
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
   }
 }
