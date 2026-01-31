@@ -16,9 +16,10 @@ resource "aws_security_group" "tf_cicd_demo_sg" {
   description = "creatig test sg for terraform ci/cd demo at hug meetup "
 
   ingress {
+    description = "test-sg allowed from my ip" 
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]  
+    cidr_blocks = [" 223.231.177.192"]  
   }
 }
