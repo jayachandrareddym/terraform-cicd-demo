@@ -20,6 +20,6 @@ resource "aws_security_group" "tf_cicd_demo_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [" 223.231.177.192"]  
+    cidr_blocks = ["223.231.177.192/32"]  
   }
 }
